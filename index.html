@@ -1,21 +1,132 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Happy Valentine’s Day ❤️</title>
+  <meta charset="UTF-8">
+  <title>For You ❤️</title>
+
+  <!-- Google Font for handwritten feel -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet">
+
   <style>
     body {
-      background-color: #ffe6eb;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding-top: 100px;
+      background: #fff1f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Dancing Script', cursive;
     }
+
+    .letter {
+      background: #ffffff;
+      width: 90%;
+      max-width: 600px;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      line-height: 1.8;
+      color: #4a2c2a;
+    }
+
     h1 {
-      color: #d6336c;
+      text-align: center;
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 22px;
+    }
+
+    .signature {
+      margin-top: 30px;
+      font-size: 24px;
+    }
+
+    .buttons {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    button {
+      font-family: 'Dancing Script', cursive;
+      font-size: 22px;
+      padding: 12px 25px;
+      margin: 10px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .yes {
+      background-color: #ff6b81;
+      color: white;
+    }
+
+    .yes:hover {
+      transform: scale(1.1);
+    }
+
+    .no {
+      background-color: #ffd6de;
+      color: #4a2c2a;
+      position: relative;
+    }
+
+    #response {
+      text-align: center;
+      font-size: 26px;
+      margin-top: 20px;
+      display: none;
     }
   </style>
 </head>
+
 <body>
-  <h1>Happy Valentine’s Day 💘</h1>
-  <p>I love you more than words can say.</p>
+  <div class="letter">
+    <h1>My Love,</h1>
+
+    <p>
+      I don’t know how to put into words everything I feel for you,
+      but I know this: loving you has been my favorite thing.
+    </p>
+
+    <p>
+      Every laugh, every quiet moment, every memory —
+      I carry them all with me. You make the ordinary feel special,
+      and my heart feel at home.
+    </p>
+
+    <p>
+      So I wanted to ask you something, from the bottom of my heart.
+    </p>
+
+    <div class="buttons">
+      <button class="yes" onclick="sayYes()">Will you be my Valentine? 💖</button>
+      <button class="no" onmouseover="moveButton(this)">No</button>
+    </div>
+
+    <div id="response">
+      💘 Yay! I love you forever 💘
+    </div>
+
+    <div class="signature">
+      <p>Always yours,<br>❤️</p>
+    </div>
+  </div>
+
+  <script>
+    function sayYes() {
+      document.getElementById("response").style.display = "block";
+    }
+
+    function moveButton(button) {
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 200 - 100;
+      button.style.transform = `translate(${x}px, ${y}px)`;
+    }
+  </script>
 </body>
 </html>
